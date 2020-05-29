@@ -1,0 +1,26 @@
+<view class="top_change">
+  <view class="one_top {{actionTop===item.text?'ont_top_action':''}}" wx:for="{{topAll}}" wx:key="index" bindtap="changeBar" data-text="{{item.text}}">
+    <view class="iconfont icon-{{item.icon}}" style="font-size:{{item.size}}rpx;color:#1678FF;line-height:75rpx"></view>
+    <view class="one_text">{{item.text}}</view>
+  </view>
+</view>
+<!-- 订单 -->
+<view class="outer_order" wx:for="{{dataAll}}" wx:key="index" data-item="{{item}}" bindtap="toDetail">
+  <!-- top -->
+  <view class="top_order">
+    <view class="top_order_left">订单号：{{item.order_number}}</view>
+    <view class="top_order_right">
+      <view class="top_order_yuan {{item.statu==='待服务'?'yuan_gren':item.statu==='服务中'?'yuan_red':'yuan_blue'}}"></view>
+      <text class="top_order_text {{item.statu==='待服务'?'text_gren':item.statu==='服务中'?'text_red':'text_blue'}}">{{item.statu}}</text>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view class="bottom_order">
+      <view class="bottom_one_text">{{item.name}}</view>
+      <view class="bottom_two_text">{{item.bespeak_time}}</view>
+      <view class="bottom_three_text">{{item.address}}</view>
+  </view>
+</view>
+<view hidden="{{lock}}">
+  <van-divider contentPosition="center">暂无更多数据</van-divider>
+</view>

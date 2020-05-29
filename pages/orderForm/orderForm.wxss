@@ -1,0 +1,158 @@
+page{
+  background-color: #F0F0F0;
+}
+.all_outer{
+  margin-bottom: 110rpx;
+}
+/* 顶部信息 */
+.info_outer{
+  width: 100%;
+  /* background-color: #1678FF; */
+  box-sizing: border-box;
+  padding-bottom: 20rpx;
+  background:-moz-linear-gradient(bottom,#5DA1FF 25%,#1678FF);
+  background:-webkit-linear-gradient(bottom,#5DA1FF 25%,#1678FF);
+  background:-o-linear-gradient(bottom,#5DA1FF 25%,#1678FF);
+  background:-ms-linear-gradient(bottom,#5DA1FF 25%,#1678FF);
+  background:linear-gradient(bottom,#5DA1FF 25%,#1678FF);
+}
+.info_top_outer{
+  padding: 20rpx 30rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.info_inside_image{
+  background-color: white;
+  width: 105rpx;
+  height: 105rpx;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+.info_inside_text{
+  color: white;
+}
+.info_inside_name{
+  font-size: 34rpx;
+  line-height: 60rpx;
+}
+.info_inside_two{
+  font-size: 20rpx;
+  line-height: 40rpx;
+}
+.info_inside_left{
+  margin-right: 38rpx;
+}
+/* 收入金额和订单数量 */
+.num_outer{
+  padding: 0rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.num_money_outer{
+  border-right: 3rpx solid white;
+}
+.num_money_outer,.num_amount_outer{
+  width: 50%;
+  color: white;
+  text-align: center;
+}
+.num_money_top,.num_amount_top{
+  font-size: 40rpx;
+  line-height: 60rpx;
+}
+.num_money_bottom,.num_amount_bottom{
+  font-size: 24rpx;
+  line-height: 44rpx;
+}
+/* 待接单/已接单 */
+.tabbarStaff_outer{
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+.tabbarStaff_inside{
+  width: 50%;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 30rpx; 
+  line-height: 80rpx;
+}
+.tabbarStaff_inside_action{
+  border-bottom: 5rpx solid #1678FF;
+  color: #1678FF;
+}
+/* 订单 */
+.order_outer{
+  padding: 20rpx;
+}
+.order_one_outer{
+  background-color: white;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+}
+.order_inside_top{
+  color: white;
+  font-size: 32rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx 10rpx 0rpx 0rpx;
+  padding: 0rpx 19rpx;
+  box-sizing: border-box;
+}
+.await_inside_top{
+  background-color: #1678FF;
+}
+.yet_inside_top{
+  background-color: #1678FF;
+}
+.order_inside_top_text{
+  margin-right: 20rpx;
+}
+.order_inside_content{
+  padding: 10rpx 20rpx 0rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+.order_inside_line{
+  display: flex;
+}
+.order_inside_left{
+  color: #666666;
+  display: inline-block;
+  width: 130rpx;
+  margin-right: 50rpx;
+}
+.order_inside_right{
+  display: inline-block;
+  width: calc(100% - 130rpx);
+}
+.order_inside_btn{
+  display: flex;
+  justify-content: flex-end;
+  padding: 0rpx 20rpx 20rpx;
+  box-sizing: border-box;
+}
+.order_inside_btn_red,.order_inside_btn_blue{
+  padding: 0rpx;
+  width: 150rpx;
+  font-size: 26rpx;
+  color: white;
+  margin: 0rpx;
+}
+.order_inside_btn_red{
+  margin-right: 10rpx;
+}
+.await_inside_btn_red{
+  background-color: #FF6600;
+}
+.yet_inside_btn_gre{
+  background-color: #22AC38;
+}
+.await_inside_btn_blue{
+  background-color: #1678FF;
+}
+/* .yet_inside_btn_or{
+  background-color: #FF6600;
+} */

@@ -1,0 +1,86 @@
+/* 顶部信息 */
+.info_outer{
+  width: 100%;
+  /* background-color: #1678FF; */
+  box-sizing: border-box;
+  padding-bottom: 20rpx;
+  background:-moz-linear-gradient(bottom,#5DA1FF 25%,#1678FF);
+  background:-webkit-linear-gradient(bottom,#5DA1FF 25%,#1678FF);
+  background:-o-linear-gradient(bottom,#5DA1FF 25%,#1678FF);
+  background:-ms-linear-gradient(bottom,#5DA1FF 25%,#1678FF);
+  background:linear-gradient(bottom,#5DA1FF 25%,#1678FF);
+}
+.info_top_outer{
+  padding: 20rpx 30rpx 30rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.info_inside_image{
+  background-color: white;
+  width: 105rpx;
+  height: 105rpx;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+.info_inside_text{
+  color: white;
+}
+.info_inside_name{
+  font-size: 34rpx;
+  line-height: 60rpx;
+}
+.info_inside_two{
+  font-size: 20rpx;
+  line-height: 40rpx;
+}
+.info_inside_left{
+  margin-right: 38rpx;
+}
+/* 收入金额和订单数量 */
+.num_outer{
+  padding: 0rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.num_money_outer{
+  border-right: 3rpx solid white;
+}
+.num_money_outer,.num_amount_outer{
+  width: 50%;
+  color: white;
+  text-align: center;
+}
+.num_money_top,.num_amount_top{
+  font-size: 40rpx;
+  line-height: 60rpx;
+}
+.num_money_bottom,.num_amount_bottom{
+  font-size: 24rpx;
+  line-height: 44rpx;
+}
+/* 订单 */
+.classify_inside_text{
+  font-size: 24rpx;
+  color: #666666;
+  line-height: 50rpx;
+}
+.classify_outer .van-grid-item__content--center{
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+/* 退出登录 */
+.out{
+  width: calc(100% - 60rpx);
+  position: fixed;
+  bottom: 130rpx;
+  left: 30rpx;
+}
+.out_text{
+  background-color: #1678FF;
+  color: white;
+  font-weight: bold;
+  line-height: 88rpx;
+  text-align: center;
+  border-radius: 88rpx;
+}

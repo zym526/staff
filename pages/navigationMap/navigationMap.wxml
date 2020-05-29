@@ -1,0 +1,16 @@
+<view style="height:calc(100% - 100rpx)">
+  <map id="map"
+  longitude="{{longitude}}"
+  latitude="{{latitude}}"
+  scale="14"
+  markers="{{markers}}"
+  bindmarkertap="markertap"
+  bindregionchange="regionchange"
+  show-location
+  style="width: 100%; height: 100%;"
+  >
+  </map>
+</view>
+<view>
+<button bindtap="navigate" style="background:#1678FF;width:100%;height:100rpx;color:white">导航</button>
+</view>

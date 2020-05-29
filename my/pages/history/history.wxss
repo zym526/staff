@@ -1,0 +1,87 @@
+page{
+  background-color: #F0F0F0;
+}
+.top_change{
+  width: 100%;
+  height: 142rpx;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+.one_top{
+  width: calc(100% / 4);
+  height: 100%;
+  font-size: 22rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ont_top_action{
+  border-bottom: 4rpx solid #1678FF;
+}
+/* 订单 */
+.outer_order{
+  width: calc(100% - 40rpx);
+  margin-left: 20rpx;
+  margin-top: 15rpx;
+  border-radius: 10rpx;
+  background-color: white;
+}
+.top_order{
+  display: flex;
+  justify-content: space-between;
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+  border-bottom: 3rpx solid #E1E1E1;
+}
+.top_order_left{
+  font-size: 28rpx;
+  color: #666666;
+  line-height: 66rpx;
+}
+.top_order_right{
+  display: flex;
+  align-items: center;
+}
+.top_order_yuan{
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 6rpx;
+  margin-right: 7rpx;
+}
+.top_order_text{
+  font-size: 20rpx;
+}
+.yuan_gren{
+  background-color: #22AC38;
+}
+.text_gren{
+  color: #22AC38;
+}
+.yuan_red{
+  background-color: #FF6600;
+}
+.text_red{
+  color: #FF6600;
+}
+.yuan_blue{
+  background-color: #1678FF;
+}
+.text_blue{
+  color: #1678FF;
+}
+.bottom_order{
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.bottom_one_text{
+  font-size: 30rpx;
+  color:#232323;
+  line-height: 50rpx;
+}
+.bottom_two_text,.bottom_three_text{
+  font-size: 20rpx;
+  color: #666666;
+  line-height: 30rpx;
+}

@@ -1,0 +1,55 @@
+<!-- 底部导航 -->
+<view class="tabbar_outer">
+  <view class="tabbar_only" bindtap="toOrderForm">
+    <view class="iconfont icon-dingdan" style="font-size:40rpx;color:#999999;margin-bottom:5rpx"></view>
+    <view style="color:#999999">订单</view>
+  </view>
+  <view class="tabbar_only">
+    <view class="iconfont icon-wode" style="font-size:40rpx;color:#1678FF;margin-bottom:5rpx"></view>
+     <view style="color:#1678FF">我的</view>
+  </view>
+</view>
+<view class="all_outer">
+  <!-- 顶部信息 -->
+  <view class="info_outer">
+    <!-- 昵称，服务项目，所属站点 -->
+    <view class="info_top_outer">
+      <view class="info_inside_image">
+        <view class="iconfont icon-ziyuan7" style="font-size:100rpx;color:#1678FF;line-height:105rpx"></view>
+      </view>
+      <view class="info_inside_text">
+        <view class="info_inside_name">{{staff.data.name}}</view>
+        <view class="info_inside_two">
+          <text class="info_inside_left">服务项目：{{staff.catename}}</text>
+          <text class="info_inside_right">所属站点：{{staff.seraddress}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 收入金额/订单数量 -->
+    <view class="num_outer">
+      <view class="num_money_outer">
+        <view class="num_money_top">{{orderPrice}}</view>
+        <view class="num_money_bottom">订单金额(元)</view>
+      </view>
+      <view class="num_amount_outer" bindtap="toHistory">
+        <view class="num_amount_top">{{orderCount}}</view>
+        <view class="num_amount_bottom">订单数量</view>
+      </view>
+    </view>
+  </view>
+  <!-- 分类 -->
+  <view class="classify_outer">
+    <van-grid column-num="3" clickable >
+      <van-grid-item use-slot wx:for="{{ 6 }}" wx:key="index" wx:for-item="index" link-type="navigateTo" url="" bindtap="toServe" data-text="{{allText[index]}}">
+        <!-- <image style="width: 70rpx; height: 70rpx" src="../../img/{{allImage[index]}}" /> -->
+        <view class="iconfont icon-{{allImage[index]}}" style="font-size:70rpx;color:{{allColor[index]}};"></view>
+        <view class="classify_inside_text">{{allText[index]}}</view>
+      </van-grid-item>
+    </van-grid>
+  </view>
+
+   <view class="out" bindtap="out">
+    <view class="out_text">退出登录</view>
+    <!-- <van-button block custom-style="font-size:32rpx;height:80rpx;background:#1678FF;color:white;margin-top:60px;" bind:click="out">退出登录</van-button> -->
+  </view>
+</view>

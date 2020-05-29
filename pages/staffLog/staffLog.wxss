@@ -1,0 +1,22 @@
+.log_logo{
+  text-align: center;
+  padding: 50rpx;
+}
+.log_tow_input{
+  margin: 0rpx 24 rpx;
+}
+.denglu{
+  margin: 50rpx 24rpx;  
+}
+.outer-span{
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  bottom: 150rpx;
+}
+.outer-span span{
+  font-size: 32rpx;
+  color: #1678FF;
+  font-weight: bold;
+}
+/* style="font-size:32rpx;height:80rpx;color:#1678FF;font-weight: 36px;float: right;display:block;text-decoration:underline;margin-top:60px;margin-right:135px"  */

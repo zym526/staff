@@ -1,0 +1,49 @@
+.info_outer{
+  padding: 20rpx;
+  font-size: 30rpx;
+  line-height: 50rpx;
+}
+.info_title{
+  background-color: #1678FF;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+  padding: 7.5rpx 15rpx;
+  color: white;
+  margin: 20rpx 0rpx;
+}
+.info_line_one{
+  display: flex;
+  justify-content: space-between;
+  padding: 0rpx 15rpx;
+  margin: 15rpx 0rpx;
+}
+.info_line_left{
+  color: #666666;
+  width: 130rpx;
+  margin-right: 50rpx;
+}
+.info_line_right{
+  color: #666666;
+  width: calc(100% - 180rpx);
+  text-align: right;
+}
+/* 转单/我抢单 */
+.btn_outer{
+  text-align: center;
+}
+.btn_inside_left,.btn_inside_right{
+  display: inline-block;
+  width: 250rpx;
+  font-size: 32rpx;
+  color: white;
+  line-height: 76rpx;
+  padding: 0rpx;
+  border-radius: 76rpx;
+  margin: 30rpx 0rpx 50rpx;
+}
+.btn_inside_left{
+  background-color: #FF6600;
+  margin-right: 27rpx;
+}
+.btn_inside_right{
+  background-color: #1678FF;
+}
