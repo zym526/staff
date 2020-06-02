@@ -1,3 +1,11 @@
+.title_top{
+  width: 100%;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 80rpx;
+  color: #1678FF;
+  background-color: rgba(22, 120, 255, 0.1);
+}
 .log_logo{
   text-align: center;
   padding: 50rpx;
@@ -15,8 +23,8 @@
   bottom: 150rpx;
 }
 .outer-span span{
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #1678FF;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 /* style="font-size:32rpx;height:80rpx;color:#1678FF;font-weight: 36px;float: right;display:block;text-decoration:underline;margin-top:60px;margin-right:135px"  */

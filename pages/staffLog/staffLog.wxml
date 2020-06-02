@@ -1,7 +1,8 @@
 <view class="log_outer">
+  <view class="title_top">员工接单登录</view>
   <!-- 顶部logo -->
   <view class="log_logo">
-    <view class="iconfont icon-ziyuan7" style="font-size:280rpx;color:#1678FF"></view>
+    <view class="iconfont icon-ziyuan7" style="font-size:200rpx;color:#1678FF"></view>
   </view> 
   <!-- 下方手机密码 -->
   <view class="log_tow_input">
@@ -27,9 +28,9 @@
     </van-cell-group>
   </view>
   <view class="denglu">
-    <van-button block custom-style="font-size:32rpx;height:80rpx;background:#1678FF;color:white" bind:click="subInfo">提交</van-button>
+    <van-button block custom-style="font-size:32rpx;height:80rpx;border-radius:80rpx;background:#1678FF;color:white" bind:click="subInfo">提交</van-button>
   </view>
   <view class="outer-span">  
-    <span bindtap="to_cliet">前往用户端>></span>
+    <span bindtap="to_cliet">洗车服务跳转>></span>
   </view>
 </view>

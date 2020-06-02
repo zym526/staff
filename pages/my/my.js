@@ -70,10 +70,12 @@ Page({
       title: '提示',
       content: '确定退出登录吗？',
       success: function (res) {
-        wx.clearStorageSync();
-        wx.redirectTo({
-          url: '/pages/staffLog/staffLog',
-        })
+        if(res.confirm){
+          wx.clearStorageSync();
+          wx.redirectTo({
+            url: '/pages/staffLog/staffLog',
+          })
+        }
       }
     })
   },
