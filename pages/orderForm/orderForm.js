@@ -13,6 +13,7 @@ Page({
   // 更改tabbar
   changeTabbar: function(e){
     var that=this;
+    that.getDY()
     var item=e.currentTarget.dataset.item;
     that.setData({
       tabbar:item,
@@ -35,6 +36,12 @@ Page({
         btnRight:"导航位置"
       })
     }
+  },
+  getDY(){
+    wx.requestSubscribeMessage({
+      tmplIds: ['dcNCDSx9mN2rYIBnih2qnkGko4TYLvt4UrIJsKK_u-I'],
+      success (res) { }
+    })
   },
   // 点击转单显示下弹窗
   showPopup(e) {
@@ -241,6 +248,7 @@ Page({
   // 跳转历史服务
   toHistory(){
     var that=this
+    that.getDY()
     that.endSetInter()
     that.endSetInterJD()
     wx.navigateTo({

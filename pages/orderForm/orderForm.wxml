@@ -1,6 +1,6 @@
 <!-- 底部导航 -->
 <view class="tabbar_outer">
-  <view class="tabbar_only">
+  <view class="tabbar_only" bindtap="getDY">
     <view class="iconfont icon-dingdan" style="font-size:40rpx;color:#1678FF;margin-bottom:5rpx"></view>
     <view style="color:#1678FF">订单</view>
   </view>

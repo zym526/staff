@@ -14,6 +14,13 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  // 订阅消息
+  getDY(){
+    wx.requestSubscribeMessage({
+      tmplIds: ['dcNCDSx9mN2rYIBnih2qnkGko4TYLvt4UrIJsKK_u-I'],
+      success (res) { }
+    })
+  },
   // 跳转页面
   toServe(e){
     var that=this
@@ -42,6 +49,7 @@ Page({
   // 跳转首页面
   toOrderForm(){
     var that=this
+    that.getDY()
     that.endSetInter()
     wx.redirectTo({
       url: '/pages/orderForm/orderForm',
