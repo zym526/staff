@@ -38,14 +38,16 @@ Page({
     }
   },
   getDY(){
+    console.log(123456)
     wx.requestSubscribeMessage({
-      tmplIds: ['dcNCDSx9mN2rYIBnih2qnkGko4TYLvt4UrIJsKK_u-I'],
+      tmplIds: ['dcNCDSx9mN2rYIBnih2qnmxMsEXzZDZYS6ha3N_qwS0'],
       success (res) { }
     })
   },
   // 点击转单显示下弹窗
   showPopup(e) {
     var that=this
+    that.getDY()
     if(that.data.btnLeft=="我要转单"){
       // 获取当前单的wsid
       var wsid=e.currentTarget.dataset.item.wsid;
@@ -117,6 +119,7 @@ Page({
     this.setData({ show: false });
   },
   toTel(e){
+    that.getDY()
     console.log(e.currentTarget.dataset.tel)
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.tel //仅为示例，并非真实的电话号码
@@ -163,6 +166,7 @@ Page({
   // 接单
   receiving(e){
     var that=this
+    that.getDY()
     // 如果是我要接订单则请求接单
     if(that.data.btnRight==="我要接单"){
       var order_number=e.currentTarget.dataset.item.order_number;
@@ -245,6 +249,7 @@ Page({
   // 前往详情页
   toDetails(e){
     var that=this
+    that.getDY()
     // that.endSetInter()
     // that.endSetInterJD()
     // 将当前单子数据存储
@@ -264,6 +269,7 @@ Page({
   // 前往我的页面
   toMy(){
     var that=this;
+    that.getDY()
     that.endSetInter()
     that.endSetInterJD()
     wx.redirectTo({
@@ -362,7 +368,8 @@ Page({
     that.startSetInterJD(1)
     that.setData({
       tabbar:"待接单",
-      btnRight:"我要接单"
+      btnRight:"我要接单",
+      btnLeft:"我要转单"
     })
   },
 
