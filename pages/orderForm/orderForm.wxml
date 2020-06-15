@@ -46,8 +46,8 @@
   <view class="order_outer">
     <view class="order_one_outer" wx:for="{{orderAll}}" wx:key="index" bindtap="toDetails" data-item="{{item}}">
       <view class="order_inside_top {{tabbar==='待接单'?'await_inside_top':'yet_inside_top'}}">
-        <text class="order_inside_top_text">{{item.username?item.username:''}}</text>
-        <text>{{item.phone?item.phone:''}}</text>
+        <text class="order_inside_top_text">{{item.user_name?item.user_name:''}}</text>
+        <text>{{item.user_phone?item.user_phone:''}}</text>
       </view>
       <view class="order_inside_content">
         <view class="order_inside_line">
@@ -66,6 +66,14 @@
           <text class="order_inside_left">服务地址</text>
           <text class="order_inside_right">{{item.address}}</text>
         </view>
+         <view class="order_inside_line">
+          <text class="order_inside_left">车辆信息</text>
+          <text class="order_inside_right">{{item.service_car}}</text>
+        </view>
+         <view class="order_inside_line" bindtap="toTel" data-tel="{{item.user_phone}}">
+          <text class="order_inside_left">联系方式</text>
+          <text class="order_inside_right">{{item.user_phone}}</text>
+        </view>
         <view class="order_inside_line">
           <text class="order_inside_left">备注信息</text>
           <text class="order_inside_right">{{item.remark}}</text>
@@ -75,7 +83,7 @@
         <van-divider />
       </view>
       <view class="order_inside_btn">
-        <button class="order_inside_btn_red {{tabbar==='待接单'?'await_inside_btn_red':'yet_inside_btn_gre'}}" catchtap="showPopup" data-item="{{item}}">{{btnLeft}}</button>
+        <button disabled="{{item.order_state=='11'?true:false}}" class="order_inside_btn_red {{tabbar==='待接单'?'await_inside_btn_red':'yet_inside_btn_gre'}}" catchtap="showPopup" data-item="{{item}}">{{item.order_state=='11'?'进行中':btnLeft}}</button>
         <button class="order_inside_btn_blue await_inside_btn_blue" catchtap="receiving" data-item="{{item}}">{{btnRight}}</button>
       </view>
     </view>

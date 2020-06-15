@@ -32,7 +32,7 @@ Page({
       that.endSetInterJD();
       that.startSetInterJD(10)
       that.setData({
-        btnLeft:"联系车主",
+        btnLeft:"开始服务",
         btnRight:"导航位置"
       })
     }
@@ -87,16 +87,40 @@ Page({
         })
       })
     }else{
-      that.endSetInter()
-      that.endSetInterJD()
-      wx.makePhoneCall({
-        phoneNumber: e.currentTarget.dataset.item.user_phone //仅为示例，并非真实的电话号码
+      // that.endSetInter()
+      // that.endSetInterJD()
+      // 开始服务请求
+      app.http({
+        url:"start_service",
+        method:"POST",
+        param:{
+          order_number: e.currentTarget.dataset.item.order_number
+        }
+      }).then(res=>{
+        console.log(res)
+        if(res.data.code==200){
+          that.getAwait(10)
+          that.setData({
+            btnLeft: "开始服务",
+            btnRight: "导航位置"
+          })
+        }else{
+          app.showToast(res.data.msg)
+        }
+      }).catch(err=>{
+        app.showToast(err.data.msg)
       })
     } 
   },
   // 隐藏下弹窗
   onClose() {
     this.setData({ show: false });
+  },
+  toTel(e){
+    console.log(e.currentTarget.dataset.tel)
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.tel //仅为示例，并非真实的电话号码
+    })
   },
   // 点击确定转单成功
   onConfirm(event) {
@@ -169,6 +193,7 @@ Page({
           })
           that.setData({
             tabbar:"已接单",
+            btnLeft:"开始服务",
             btnRight:"导航位置"
           })
           that.getAwait(10)
@@ -186,8 +211,8 @@ Page({
       var lat=e.currentTarget.dataset.item.latitude;
       var lon=e.currentTarget.dataset.item.longitude;
       console.log(lat,lon,e)
-      that.endSetInter();
-      that.endSetInterJD()
+      // that.endSetInter();
+      // that.endSetInterJD()
       // 跳转导航页面
       wx.navigateTo({
         url: '/pages/navigationMap/navigationMap?lon='+lon+"&lat="+lat,
@@ -220,8 +245,8 @@ Page({
   // 前往详情页
   toDetails(e){
     var that=this
-    that.endSetInter()
-    that.endSetInterJD()
+    // that.endSetInter()
+    // that.endSetInterJD()
     // 将当前单子数据存储
     var orderItem=e.currentTarget.dataset.item
     app.globalData.orderItem=orderItem
@@ -249,8 +274,8 @@ Page({
   toHistory(){
     var that=this
     that.getDY()
-    that.endSetInter()
-    that.endSetInterJD()
+    // that.endSetInter()
+    // that.endSetInterJD()
     wx.navigateTo({
       url: '/my/pages/history/history',
     })
@@ -258,6 +283,7 @@ Page({
   // 开启计时器,获取订单金额和订单数量
   startSetInter() {
     var that = this;
+    console.log("定金和数量开始计时")
     that.data.setInter = setInterval(
     function () {
         that.getStaff()
@@ -266,12 +292,13 @@ Page({
   //清除计时器
   endSetInter: function () {
     var that = this;
-    console.log("清除定时器")
+    console.log("定金和订单数量,清除定时器")
     clearInterval(that.data.setInter)
   },
   // 开启计时器,获取待接单或已结单数据
   startSetInterJD(index) {
     var that = this;
+    console.log("接单,开始计时")
     that.data.setInterJD = setInterval(
     function () {
         that.getAwait(index)
@@ -280,7 +307,7 @@ Page({
   //清除计时器
   endSetInterJD: function () {
     var that = this;
-    console.log("清除定时器")
+    console.log("接单,清除定时器")
     clearInterval(that.data.setInterJD)
   },
   // 获取员工端首页数据
@@ -331,6 +358,7 @@ Page({
     that.getAwait(1);
     // 开启计时器定时刷新获取员工信息
     that.startSetInter()
+    // 开始服务
     that.startSetInterJD(1)
     that.setData({
       tabbar:"待接单",
@@ -342,7 +370,10 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    var that=this
+    // 清除计时器
+    that.endSetInterJD()
+    that.endSetInter()
   },
 
   /**

@@ -26,7 +26,7 @@ Page({
     var that=this
     var text=e.currentTarget.dataset.text
     if(text==="历史服务"){
-      that.endSetInter()
+      // that.endSetInter()
       wx.navigateTo({
         url: '/my/pages/history/history',
       })
@@ -41,7 +41,7 @@ Page({
   // 跳转历史服务
   toHistory(){
     var that=this
-    that.endSetInter()
+    // that.endSetInter()
     wx.navigateTo({
       url: '/my/pages/history/history',
     })
@@ -90,6 +90,7 @@ Page({
   // 开启计时器,获取订单金额和订单数量
   startSetInter() {
     var that = this;
+    console.log("开启计时器")
     that.data.setInter = setInterval(
     function () {
         that.getStaff()
@@ -131,7 +132,8 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    var that=this
+    that.endSetInter()
   },
 
   /**
